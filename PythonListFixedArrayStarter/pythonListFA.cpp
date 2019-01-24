@@ -26,17 +26,19 @@ PythonList::PythonList( const string info[], int num_cells)   // this method is 
 // Python Methods
 void PythonList::append(string item)
 {
-	
+	data[itemCount] = item;
+	itemCount++;
 
 }
 void PythonList::extend(const PythonList & listToAdd)
 {
-   
+	for (int i = 0; i < listToAdd.itemCount; i++)
+		append(listToAdd.data[i]);
 
 }
 void PythonList::insert(int index, string itemToInsert)
 {
-
+	
 
 }
 void PythonList::remove(string itemToRemove) //Remove the first item from the list whose value is itemToRemove. 
