@@ -38,19 +38,35 @@ void PythonList::extend(const PythonList & listToAdd)
 }
 void PythonList::insert(int index, string itemToInsert)
 {
-	
+	for (int i = itemCount; i > index; i--)
+		data[i] = data[i - 1];
+	data[index] = itemToInsert;
+	itemCount++;
 
 }
 void PythonList::remove(string itemToRemove) //Remove the first item from the list whose value is itemToRemove. 
 	       // It is an error if there is no such item.
 {
-	
-
+	for (int i = 0; i < itemCount; i++)
+		if (data[i] == itemToRemove)
+		{
+			for (int j = i; j < itemCount - 1; j++)
+				data[j] = data[j + 1];
+			itemCount--;
+		}
 }
 string PythonList::pop(int positionToRemove)
 {
+	string popped = data[positionToRemove];
 
-	return ""; // Dummy Statement to get to compile
+	for (int i = positionToRemove; i < itemCount - 1; i++)
+	{
+		data[i] = data[i + 1];
+		
+	}
+	itemCount--;
+
+	return popped; // Dummy Statement to get to compile
 
 }
 
