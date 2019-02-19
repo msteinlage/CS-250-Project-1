@@ -57,36 +57,64 @@ void PythonList::remove(string itemToRemove) //Remove the first item from the li
 }
 string PythonList::pop(int positionToRemove)
 {
+
 	string popped = data[positionToRemove];
-
-	for (int i = positionToRemove; i < itemCount - 1; i++)
-	{
-		data[i] = data[i + 1];
-		
-	}
 	itemCount--;
+	return popped;
 
+	/*
+	if (positionToRemove >= 0 && positionToRemove <= itemCount)
+	{
+		popped = data[positionToRemove];
+
+		for (int i = positionToRemove; i < itemCount - 1; i++)
+		{
+			data[i] = data[i + 1];
+
+		}
+		itemCount--;
+	}
+	
 	return popped; // Dummy Statement to get to compile
-
+	)*/
 }
 
 string PythonList::pop()                      // remove the last item in the list
 {
-	return ""; // Dummy Statement to get to compile
+	string popped = data[itemCount];
+	itemCount--;
+	return popped; // Dummy Statement to get to compile
 }
 
 int  PythonList::index(string itemToFind) const // Return the index in the list of the first item whose value is xitemToFind. 
 	    // It is an error if there is no such item.
 {
+	int index;
+
+	for (int i = 0; i < itemCount; i++) 
+	{
+		
+		if (data[i] == itemToFind);
+		{
+			index = i+1;
+		}
+	}
+	return index;
 	
-	
-	return -100;    // Dummy Statement to get to compile
+	//return -100;    // Dummy Statement to get to compile
 }
 
 int  PythonList::count(string itemToCount) const
 {
-        
-	return -100;    // Dummy Statement to get to compile
+	int count = 0;
+	for (int i = 0; i < itemCount; i++) 
+	{
+		if (data[i] == itemToCount) 
+		{
+			count++;
+		}
+	}
+	return count;    // Dummy Statement to get to compile
 }
 
 void PythonList::sort()                     //   sort the list in place, will not implement a 
@@ -99,7 +127,13 @@ void PythonList::sort()                     //   sort the list in place, will no
 	                                         
 void PythonList::reverse()                 //   reverse the elements in place
 {
-
+	string temp;
+	for(int i = 0; i < itemCount/2; i++)
+	{
+		temp = data[i];
+		data[i] = data[itemCount - i];
+		data[itemCount - i] = temp;
+	}
 
 }
 
