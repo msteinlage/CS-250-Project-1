@@ -1,4 +1,5 @@
 #include "pythonListFA.h"
+#include <algorithm>
 
 // Constructors
 PythonList::PythonList(void)   // this method is correct
@@ -89,17 +90,16 @@ string PythonList::pop()                      // remove the last item in the lis
 int  PythonList::index(string itemToFind) const // Return the index in the list of the first item whose value is xitemToFind. 
 	    // It is an error if there is no such item.
 {
-	int index;
-
+	//int index;
 	for (int i = 0; i < itemCount; i++) 
 	{
-		
-		if (data[i] == itemToFind);
+		//item = data[i];
+		if (data[i] == itemToFind)
 		{
-			index = i+1;
+			return i;
 		}
 	}
-	return index;
+	
 	
 	//return -100;    // Dummy Statement to get to compile
 }
@@ -120,21 +120,23 @@ int  PythonList::count(string itemToCount) const
 void PythonList::sort()                     //   sort the list in place, will not implement a 
 {
 	
-
+	std::sort(data, data + itemCount);
 
 }
 
 	                                         
 void PythonList::reverse()                 //   reverse the elements in place
 {
-	string temp;
-	for(int i = 0; i < itemCount/2; i++)
+	
+	std::reverse
+	string temp = "";
+	for(int i = 0; i < itemCount;  i++)
 	{
 		temp = data[i];
 		data[i] = data[itemCount - i];
 		data[itemCount - i] = temp;
 	}
-
+	
 }
 
 // functions with List arguments
