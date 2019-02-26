@@ -121,20 +121,21 @@ void PythonList::sort()                     //   sort the list in place, will no
 {
 	
 	std::sort(data, data + itemCount);
-
+	
 }
 
 	                                         
 void PythonList::reverse()                 //   reverse the elements in place
 {
 	
-	std::reverse
+	std::reverse(data, data + itemCount);
+	
 	string temp = "";
 	for(int i = 0; i < itemCount;  i++)
 	{
 		temp = data[i];
-		data[i] = data[itemCount - i];
-		data[itemCount - i] = temp;
+		data[i] = data[i + 1];
+		data[i + i] = temp;
 	}
 	
 }
