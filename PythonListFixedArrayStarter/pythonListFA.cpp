@@ -101,7 +101,7 @@ int  PythonList::index(string itemToFind) const // Return the index in the list 
 	}
 	
 	
-	//return -100;    // Dummy Statement to get to compile
+	
 }
 
 int  PythonList::count(string itemToCount) const
@@ -114,7 +114,7 @@ int  PythonList::count(string itemToCount) const
 			count++;
 		}
 	}
-	return count;    // Dummy Statement to get to compile
+	return count;    
 }
 
 void PythonList::sort()                     //   sort the list in place, will not implement a 
@@ -128,16 +128,23 @@ void PythonList::sort()                     //   sort the list in place, will no
 void PythonList::reverse()                 //   reverse the elements in place
 {
 	
-	std::reverse(data, data + itemCount);
-	
 	string temp = "";
-	for(int i = 0; i < itemCount;  i++)
+	if (itemCount %2 != 0) 
 	{
-		temp = data[i];
-		data[i] = data[i + 1];
-		data[i + i] = temp;
+		itemCount++;
 	}
 	
+
+	
+	for(int i = 0; i < itemCount/2; i++)
+	{
+		temp = data[itemCount - i - 1];
+		data[itemCount - i - 1] = data[i];
+		data[i] = temp;
+
+
+		cout << "********** TEMP: " << data[i] << endl;
+	}
 }
 
 // functions with List arguments
@@ -149,6 +156,7 @@ int len(const PythonList & parm)      // Correct Code
 
 int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 {
+	
 	return -100;    // Dummy Statement to get to compile
 
 }
