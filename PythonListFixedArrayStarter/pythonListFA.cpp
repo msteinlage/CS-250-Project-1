@@ -134,8 +134,6 @@ void PythonList::reverse()                 //   reverse the elements in place
 		itemCount++;
 	}
 	
-
-	
 	for(int i = 0; i < itemCount/2; i++)
 	{
 		temp = data[itemCount - i - 1];
@@ -156,14 +154,32 @@ int len(const PythonList & parm)      // Correct Code
 
 int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 {
+	int i = 0;
+
 	
-	return -100;    // Dummy Statement to get to compile
+	while (i != 6)
+	{
+		cout << "***LEFT " << left[i] << "***RIGHT " << right[i] << endl;
+		if (right[i] != left[i])
+			return 1;
+		else
+			i++;
+	}
+	return 0;
+	
+	//while (left[i] != left[left.itemCount])
 
 }
 
 string max(const PythonList & aList)
 {
-	return " ";    // Dummy Statement to get to compile
+	string tempMax = "";
+	for (int i = 0; i < aList.itemCount; i++)
+	{
+		//if (aList <)
+		//	tempMax = aList[i];
+	}
+	return tempMax;
 
 }
 

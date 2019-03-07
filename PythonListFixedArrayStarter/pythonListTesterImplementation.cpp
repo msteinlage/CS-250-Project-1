@@ -185,9 +185,11 @@ int PythonListTester::testLenFunction()
 // 11 function int    comp(const PythonList & left, const PythonList & right)
 int PythonListTester::testCompFunction()                       //   uses pop()
 {
+	int temp = 7;
 	string d[7] = { "one","two","three","four", "six", "five","nine" };
 	PythonList a(d, 7);
 	PythonList b(d, 7);
+	temp = comp(a, b);
 	if (comp(a, b) != 0) return 0;
 	b[6] = "xxx";
 	if (comp(a, b) != -1) return 0;
