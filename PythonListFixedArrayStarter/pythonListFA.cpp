@@ -1,5 +1,7 @@
 #include "pythonListFA.h"
 #include <algorithm>
+#include <string.h>
+#include <iostream>
 
 // Constructors
 PythonList::PythonList(void)   // this method is correct
@@ -154,20 +156,26 @@ int len(const PythonList & parm)      // Correct Code
 
 int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 {
-	int i = 0;
 
 	
-	while (i != 6)
-	{
-		cout << "***LEFT " << left[i] << "***RIGHT " << right[i] << endl;
-		if (right[i] != left[i])
-			return 1;
+	
+	//int itemCount = left.count;
+	
+	int tester = 0;
+	char selectL[100], selectR[100];
+	if (left.itemCount < right.itemCount)
+		return 1;
+	else if (left.itemCount > right.itemCount)
+		return -1;
+	for (int i = 0; i < left.itemCount; i++)
+		if (left[i] != right[i])
+			return -1;
 		else
-			i++;
-	}
-	return 0;
+
+	return tester;
 	
 	//while (left[i] != left[left.itemCount])
+	
 
 }
 
