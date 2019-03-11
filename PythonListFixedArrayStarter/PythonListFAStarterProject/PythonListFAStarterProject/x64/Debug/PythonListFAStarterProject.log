@@ -1,5 +1,3 @@
 ﻿  pythonListFA.cpp
-c:\users\msteinlage\source\repos\cs-250-project-15\pythonlistfixedarraystarter\pythonlistfa.cpp(165): warning C4101: 'selectL': unreferenced local variable
-c:\users\msteinlage\source\repos\cs-250-project-15\pythonlistfixedarraystarter\pythonlistfa.cpp(165): warning C4101: 'selectR': unreferenced local variable
-c:\users\msteinlage\source\repos\cs-250-project-15\pythonlistfixedarraystarter\pythonlistfa.cpp(107): warning C4715: 'PythonList::index': not all control paths return a value
-  PythonListFAStarterProject.vcxproj -> C:\Users\msteinlage\Source\Repos\CS-250-Project-15\PythonListFixedArrayStarter\PythonListFAStarterProject\x64\Debug\PythonListFAStarterProject.exe
+c:\users\msteinlage\source\repos\cs-250-project-16\pythonlistfixedarraystarter\pythonlistfa.cpp(107): warning C4715: 'PythonList::index': not all control paths return a value
+  PythonListFAStarterProject.vcxproj -> C:\Users\msteinlage\Source\Repos\CS-250-Project-16\PythonListFixedArrayStarter\PythonListFAStarterProject\x64\Debug\PythonListFAStarterProject.exe

@@ -156,11 +156,17 @@ int len(const PythonList & parm)      // Correct Code
 
 int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 {
+	if (left.data < right.data)
+		return 1;
+	else if (left.data > right.data)
+		return -1;
+	else
+		return 0;
+		
 
 	
-	
 	//int itemCount = left.count;
-	
+	/*
 	int tester = 0;
 	char selectL[100], selectR[100];
 	if (left.itemCount < right.itemCount)
@@ -170,9 +176,9 @@ int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 	for (int i = 0; i < left.itemCount; i++)
 		if (left[i] != right[i])
 			return -1;
-		else
 
 	return tester;
+	*/
 	
 	//while (left[i] != left[left.itemCount])
 	
