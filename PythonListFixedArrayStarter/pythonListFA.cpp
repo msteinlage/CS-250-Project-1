@@ -3,6 +3,10 @@
 #include <string.h>
 #include <iostream>
 
+// TODO DELETE
+#include <string>
+
+
 // Constructors
 PythonList::PythonList(void)   // this method is correct
 {
@@ -154,15 +158,68 @@ int len(const PythonList & parm)      // Correct Code
 	return parm.itemCount;
 }
 
+
+
+
+
 int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 {
-	if (left.data < right.data)
+	auto GetWeight = [&](const PythonList& a, const PythonList& b) {
+		int sumA = 0;
+		int sumB = 0;
+		for (string s : a.data) {
+			for (char c : s) sumA += c;
+		}
+
+		for (string s : b.data) {
+			for (char c : s) sumB += c;
+		}
+
+		cout << "SUM_A : " << sumA << endl;
+		cout << "SUM_B : " << sumB << endl;
+	};
+
+	//GetWeight(left, right);
+
+	if (left.itemCount > right.itemCount)
 		return 1;
-	else if (left.data > right.data)
+	if (left.itemCount < right.itemCount)
+		return -1; 
+	/*
+	Left [0] = "ZZZ"
+	Left [1] = "ZZZ"
+
+	Right [0] = "A"
+	Right [1] = "A"
+	Right [2] = "A"
+		*/
+
+
+	for (int i = 0; i < left.itemCount; i++) {
+		if (left.data[i] < right.data[i]) {
+
+			cout << "lEFT"  << left.data[i] << "right" << right.data[i] << endl;
+			return -1;
+		}
+		//cout << "Left: " << left.data[i] << "     Right: " << right.data[i] << endl;
+		else if (left.data[i] > right.data[i]) {
+			cout << "LEFT" << endl;
+			return 1;
+		}
+		else
+		
+			cout << "SAME" << endl;
+	}
+
+	return 0;
+	/*
+	if (left.data == right.data)
+		return 0;
+	else if (left.data < right.data)
 		return -1;
 	else
-		return 0;
-		
+		return 1;
+		*/
 
 	
 	//int itemCount = left.count;
@@ -185,16 +242,20 @@ int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 
 }
 
+
+
+
+
 string max(const PythonList & aList)
 {
-	string tempMax = "";
-	for (int i = 0; i < aList.itemCount; i++)
-	{
-		//if (aList <)
-		//	tempMax = aList[i];
-	}
-	return tempMax;
+	string tempM;
+	for (int i = 0; i < aList.itemCount - 1; i++) {
 
+		if (aList[i] > aList[i+1])
+			tempM = aList[i];
+
+	}
+	return tempM;
 }
 
 string min(const PythonList & aList)

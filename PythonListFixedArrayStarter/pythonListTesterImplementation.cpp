@@ -197,7 +197,8 @@ int PythonListTester::testCompFunction()                       //   uses pop()
 	PythonList c(a);
 	c.pop();
 	if (comp(c, a) != -1) return 0;
-	if (comp(a, c) != 1) return 0;
+12
+if (comp(a, c) != 1) return 0;
 	return VALUE_OF_TEST;
 
 }
