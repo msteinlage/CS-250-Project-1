@@ -197,7 +197,7 @@ int PythonListTester::testCompFunction()                       //   uses pop()
 	PythonList c(a);
 	c.pop();
 	if (comp(c, a) != -1) return 0;
-12
+
 if (comp(a, c) != 1) return 0;
 	return VALUE_OF_TEST;
 
@@ -244,7 +244,11 @@ int PythonListTester::testEqOperator()
 	PythonList a3(d3, 2);
 	PythonList a4(d4, 3);
 
-	if (a1 == a2 && !(a1 == a3) && !(a1 == a4)) return VALUE_OF_TEST;
+	if ((a1 == a2) && !(a1 == a3) && !(a1 == a4)) {
+		
+		return VALUE_OF_TEST;
+	}
+	cout << "TEST SCORE: " << VALUE_OF_TEST << endl;
 	return 0;
 }
 // 15 operator string &       operator [] (int index)

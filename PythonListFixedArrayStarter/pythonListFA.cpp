@@ -164,6 +164,7 @@ int len(const PythonList & parm)      // Correct Code
 
 int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 {
+	
 	auto GetWeight = [&](const PythonList& a, const PythonList& b) {
 		int sumA = 0;
 		int sumB = 0;
@@ -178,6 +179,7 @@ int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 		cout << "SUM_A : " << sumA << endl;
 		cout << "SUM_B : " << sumB << endl;
 	};
+	
 
 	//GetWeight(left, right);
 
@@ -185,15 +187,6 @@ int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 		return 1;
 	if (left.itemCount < right.itemCount)
 		return -1; 
-	/*
-	Left [0] = "ZZZ"
-	Left [1] = "ZZZ"
-
-	Right [0] = "A"
-	Right [1] = "A"
-	Right [2] = "A"
-		*/
-
 
 	for (int i = 0; i < left.itemCount; i++) {
 		if (left.data[i] < right.data[i]) {
@@ -212,33 +205,6 @@ int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 	}
 
 	return 0;
-	/*
-	if (left.data == right.data)
-		return 0;
-	else if (left.data < right.data)
-		return -1;
-	else
-		return 1;
-		*/
-
-	
-	//int itemCount = left.count;
-	/*
-	int tester = 0;
-	char selectL[100], selectR[100];
-	if (left.itemCount < right.itemCount)
-		return 1;
-	else if (left.itemCount > right.itemCount)
-		return -1;
-	for (int i = 0; i < left.itemCount; i++)
-		if (left[i] != right[i])
-			return -1;
-
-	return tester;
-	*/
-	
-	//while (left[i] != left[left.itemCount])
-	
 
 }
 
@@ -248,11 +214,11 @@ int    comp(const PythonList & left, const PythonList & right) // -1, 0, or 1
 
 string max(const PythonList & aList)
 {
-	string tempM;
+	string tempM = "0";
 	for (int i = 0; i < aList.itemCount - 1; i++) {
 
-		if (aList[i] > aList[i+1])
-			tempM = aList[i];
+		if (tempM < aList.data[i])
+			tempM = aList.data[i];
 
 	}
 	return tempM;
@@ -260,7 +226,14 @@ string max(const PythonList & aList)
 
 string min(const PythonList & aList)
 {
-	return " ";    // Dummy Statement to get to compile
+	string tempMin = "zzzzzzzzz";
+	for (int i = 0; i < aList.itemCount - 1; i++) {
+
+		if (tempMin > aList.data[i])
+			tempMin = aList.data[i];
+
+	}
+	return tempMin;    // Dummy Statement to get to compile
 
 }
 
@@ -268,8 +241,17 @@ string min(const PythonList & aList)
 
 bool PythonList::operator == ( const PythonList & right) const
 {
-   
-	return true;      // Dummy Statement to get to compile
+	cout << "***Non-Pointer*** " << right[1] << " ***Pointer***: " << right[0];
+	/*for (int i = 0; i < itemCount; i++)
+	{
+		right[i] = (*right[i]).id;
+
+	} (int i = 0; i < itemCount; i++)
+	*/
+	//if (*right[])
+	if ((right[0] == right[1]) )
+		return true; // Dummy Statement to get to compile
+	return false;
 }
 
 //  if a is["bill", "sue", "sam", "ann"]
@@ -289,6 +271,7 @@ const string & PythonList::operator[](int index) const               //  index o
 PythonList PythonList::operator+(const PythonList & right) const    //  will return by value a concateneated list
 {
 	PythonList ans;    // Dummy Code to get to compile
+	string work = "x";
 
 
 	return ans;
