@@ -1,2 +1,4 @@
-﻿  pythonListTesterImplementation.cpp
-  PythonListFAStarterProject.vcxproj -> C:\Users\msteinl5\Source\Repos\CS-250-Project-1\PythonListFixedArrayStarter\PythonListFAStarterProject\x64\Debug\PythonListFAStarterProject.exe
+﻿  pythonListFA.cpp
+c:\users\msteinlage\source\repos\cs-250-project-14\pythonlistfixedarraystarter\pythonlistfa.cpp(111): warning C4715: 'PythonList::index': not all control paths return a value
+c:\users\msteinlage\source\repos\cs-250-project-14\pythonlistfixedarraystarter\pythonlistfa.cpp(258): warning C4717: 'PythonList::operator==': recursive on all control paths, function will cause runtime stack overflow
+  PythonListFAStarterProject.vcxproj -> C:\Users\msteinlage\Source\Repos\CS-250-Project-14\PythonListFixedArrayStarter\PythonListFAStarterProject\x64\Debug\PythonListFAStarterProject.exe

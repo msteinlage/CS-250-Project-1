@@ -241,7 +241,9 @@ string min(const PythonList & aList)
 
 bool PythonList::operator == ( const PythonList & right) const
 {
-	cout << "***Non-Pointer*** " << right[1] << " ***Pointer***: " << right[0];
+	
+	cout << "***Thing 1 == *** " << (this)->data[0] << " ***Thing 2 == *** " << (this)->data[1];
+	//cout << "TEST FOR WHAT EQUALS " << *this->data ;
 	/*for (int i = 0; i < itemCount; i++)
 	{
 		right[i] = (*right[i]).id;
@@ -249,8 +251,9 @@ bool PythonList::operator == ( const PythonList & right) const
 	} (int i = 0; i < itemCount; i++)
 	*/
 	//if (*right[])
-	if ((right[0] == right[1]) )
-		return true; // Dummy Statement to get to compile
+	//const PythonList temp = right;
+	//if( temp == *(this))
+		//return true;
 	return false;
 }
 
