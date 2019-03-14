@@ -242,19 +242,18 @@ string min(const PythonList & aList)
 bool PythonList::operator == ( const PythonList & right) const
 {
 	
-	cout << "***Thing 1 == *** " << (this)->data[0] << " ***Thing 2 == *** " << (this)->data[1];
-	//cout << "TEST FOR WHAT EQUALS " << *this->data ;
-	/*for (int i = 0; i < itemCount; i++)
-	{
-		right[i] = (*right[i]).id;
+	cout << "*** A1.1 == *** " << (this)->data[0] << " *** A1.2 *** " << (this)->data[1];
+	cout << "*** A2.1 == *** " << right[0] << " *** A2.2 *** " << right[1];
+	
 
-	} (int i = 0; i < itemCount; i++)
-	*/
-	//if (*right[])
-	//const PythonList temp = right;
-	//if( temp == *(this))
-		//return true;
+	if ((this)->itemCount != right.itemCount)
+		return false;
+	if( (this)->data[0] == right[0] && (this)->data[1] == right[1])
+
+		return true;
+	
 	return false;
+	
 }
 
 //  if a is["bill", "sue", "sam", "ann"]
@@ -273,10 +272,15 @@ const string & PythonList::operator[](int index) const               //  index o
 
 PythonList PythonList::operator+(const PythonList & right) const    //  will return by value a concateneated list
 {
-	PythonList ans;    // Dummy Code to get to compile
-	string work = "x";
+	PythonList ans(this;    // Dummy Code to get to compile
+	string work = "";
+	for (int i = 0; i < right.itemCount; i++) {
 
-
+		ans(right[i], itemCount++)
+	}
+	if ()
+		return 1;
+	
 	return ans;
 }
 
