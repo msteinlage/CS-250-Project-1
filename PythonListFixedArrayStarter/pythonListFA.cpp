@@ -64,12 +64,8 @@ void PythonList::remove(string itemToRemove) //Remove the first item from the li
 }
 string PythonList::pop(int positionToRemove)
 {
-
-	string popped = data[positionToRemove];
-	itemCount--;
-	return popped;
-
-	/*
+	string popped;
+	
 	if (positionToRemove >= 0 && positionToRemove <= itemCount)
 	{
 		popped = data[positionToRemove];
@@ -83,7 +79,6 @@ string PythonList::pop(int positionToRemove)
 	}
 	
 	return popped; // Dummy Statement to get to compile
-	)*/
 }
 
 string PythonList::pop()                      // remove the last item in the list
@@ -104,8 +99,10 @@ int  PythonList::index(string itemToFind) const // Return the index in the list 
 		{
 			return i;
 		}
+		
 	}
 	
+	return -1;
 	
 	
 }
@@ -272,42 +269,52 @@ const string & PythonList::operator[](int index) const               //  index o
 
 PythonList PythonList::operator+(const PythonList & right) const    //  will return by value a concateneated list
 {
-	PythonList ans(this;    // Dummy Code to get to compile
-	string work = "";
-	for (int i = 0; i < right.itemCount; i++) {
-
-		ans(right[i], itemCount++)
-	}
-	if ()
-		return 1;
+	PythonList *(ans) = new PythonList;    // Dummy Code to get to compile
 	
-	return ans;
+	(ans)->extend(*this);
+
+	cout << "ANS: " << ans;
+
+	(ans)->extend(right);
+
+	
+	return *ans;
 }
 
-PythonList PythonList::operator*(int times) const                    //  see documentation for behavior of * operator
+PythonList PythonList::operator*(int times) const         //  see documentation for behavior of * operator
 {
-	PythonList ans;    // Dummy Code to get to compile
-	
+	PythonList *(ans) = new PythonList;
 
-	return ans;
+	for (int i = 0; i < times; i++)        // Dummy Code to get to compile
+	{
+		(ans)->extend(*(this));
+	}
+
+	return *ans;
 }
 
 
 // operators that must be implemented as friends since the left operand is NOT a PythonList
 
 bool inOperator(string lookFor, const PythonList & listToCheck)
-	                     //  Python syntax 
-	                     //   horsemen = ["war", "famine", "pestilence", "death"]
-                         //  "pestilence" in horsemen
+//  Python syntax 
+//   horsemen = ["war", "famine", "pestilence", "death"]
+//  "pestilence" in horsemen
 {
 
-	return true;    // Dummy Statement to get to compile
+	for (int i = 0; i < listToCheck.itemCount; i++)   // Dummy Statement to get to compile
+	{
+		if ((listToCheck).data[i] == lookFor)
+			return true;
+	}
+	return false;
 }
 
 bool notInOperator(string lookFor, const PythonList & listToCheck)   //  use the inOperator and negate the return value 
 {
-
-	return true;    // Dummy Statement to get to compile
+	if (!(inOperator(lookFor, listToCheck)))
+		return true;
+	return false;    // Dummy Statement to get to compile
 }
 
 

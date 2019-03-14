@@ -296,6 +296,7 @@ int PythonListTester::testPlusOperator()
 	c = a + b;
 	int lenA = len(a);
 	int lenB = len(b);
+	cout << " result::: " << c << endl;
 	if (len(c) != (lenA + lenB)) return 0;
 	for (int i = 0; i < lenA; i++)
 		if (c[i] != a[i]) return 0;
